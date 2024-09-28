@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 })
 
+app.post("/city", (req, res)=>{
+    const city = req.body;
+    res.render("index.ejs");
+    console.log(city);
+})
 app.listen(port, ()=> {
     console.log("server running on port: " + port);
 })
