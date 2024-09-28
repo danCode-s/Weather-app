@@ -10,7 +10,7 @@
     <h1>Weather app</h1>
 
     <div class="container">
-        <% if(!locals.weather_data){%>
+        <% if(!locals.currentWeather){%>
             <form action="/city" method="POST">
                 <input type="text" name="city" placeholder="Enter a city" required>
                 <!-- <input type="text" name="state_code" placeholder="Enter State Code(only for the US)">
@@ -18,6 +18,14 @@
                 <input type="submit" value="Submit">
             </form>
         <% }else{%>
+            <div class="weather-card">
+                <h2><%= currentWeather.name%></h2>
+                <h1><%= Math.round(currentWeather.main.temp)%> C°</h1>
+                <p>Max: <%=Math.round(currentWeather.main.temp_max)%> C° Min: <%=Math.round(currentWeather.main.temp)%> C°</p>
+                <h3>Weather: </h3>
+                <p><%= currentWeather.weather[0].main%></p>
+                <p><%= currentWeather.weather[0].description%> </p>
+            </div>
 
         <%}%>
     </div>
