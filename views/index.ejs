@@ -12,7 +12,9 @@
     <div class="container">
         <% if(!locals.weather_data){%>
             <form action="/city" method="POST">
-                <input type="text" name="city" placeholder="Enter a city">
+                <input type="text" name="city" placeholder="Enter a city" required>
+                <!-- <input type="text" name="state_code" placeholder="Enter State Code(only for the US)">
+                <input type="text" name="country_code" placeholder="Enter country Code" required> -->
                 <input type="submit" value="Submit">
             </form>
         <% }else{%>
