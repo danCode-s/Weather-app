@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 
-const API_Key = "94cd2ad3ce3a6c477292027ee79f5483";
+const API_Key = "";
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
